@@ -1,0 +1,22 @@
+﻿Main.obj : error LNK2005: "public: void __cdecl ObjectRenderer::CalculateNormals(void)" (?CalculateNormals@ObjectRenderer@@QEAAXXZ) already defined in Loader.obj
+Main.obj : error LNK2005: "public: void __cdecl ObjectRenderer::Display(void)" (?Display@ObjectRenderer@@QEAAXXZ) already defined in Loader.obj
+Main.obj : error LNK2005: "protected: void __cdecl ObjectRenderer::DisplayGL(void)" (?DisplayGL@ObjectRenderer@@IEAAXXZ) already defined in Loader.obj
+Main.obj : error LNK2005: "public: void __cdecl ObjectRenderer::DisplayGizmos(void)" (?DisplayGizmos@ObjectRenderer@@QEAAXXZ) already defined in Loader.obj
+Main.obj : error LNK2005: "protected: void __cdecl ObjectRenderer::DisplayList(void)" (?DisplayList@ObjectRenderer@@IEAAXXZ) already defined in Loader.obj
+Main.obj : error LNK2005: "protected: void __cdecl ObjectRenderer::DisplayVBO(void)" (?DisplayVBO@ObjectRenderer@@IEAAXXZ) already defined in Loader.obj
+Main.obj : error LNK2005: "protected: void __cdecl ObjectRenderer::DisplayVP(void)" (?DisplayVP@ObjectRenderer@@IEAAXXZ) already defined in Loader.obj
+Model.obj : error LNK2005: "public: void __cdecl ObjectRenderer::CalculateNormals(void)" (?CalculateNormals@ObjectRenderer@@QEAAXXZ) already defined in Loader.obj
+Model.obj : error LNK2005: "public: void __cdecl ObjectRenderer::Display(void)" (?Display@ObjectRenderer@@QEAAXXZ) already defined in Loader.obj
+Model.obj : error LNK2005: "protected: void __cdecl ObjectRenderer::DisplayGL(void)" (?DisplayGL@ObjectRenderer@@IEAAXXZ) already defined in Loader.obj
+Model.obj : error LNK2005: "public: void __cdecl ObjectRenderer::DisplayGizmos(void)" (?DisplayGizmos@ObjectRenderer@@QEAAXXZ) already defined in Loader.obj
+Model.obj : error LNK2005: "protected: void __cdecl ObjectRenderer::DisplayList(void)" (?DisplayList@ObjectRenderer@@IEAAXXZ) already defined in Loader.obj
+Model.obj : error LNK2005: "protected: void __cdecl ObjectRenderer::DisplayVBO(void)" (?DisplayVBO@ObjectRenderer@@IEAAXXZ) already defined in Loader.obj
+Model.obj : error LNK2005: "protected: void __cdecl ObjectRenderer::DisplayVP(void)" (?DisplayVP@ObjectRenderer@@IEAAXXZ) already defined in Loader.obj
+UserInterface.obj : error LNK2005: "public: void __cdecl ObjectRenderer::CalculateNormals(void)" (?CalculateNormals@ObjectRenderer@@QEAAXXZ) already defined in Loader.obj
+UserInterface.obj : error LNK2005: "public: void __cdecl ObjectRenderer::Display(void)" (?Display@ObjectRenderer@@QEAAXXZ) already defined in Loader.obj
+UserInterface.obj : error LNK2005: "protected: void __cdecl ObjectRenderer::DisplayGL(void)" (?DisplayGL@ObjectRenderer@@IEAAXXZ) already defined in Loader.obj
+UserInterface.obj : error LNK2005: "public: void __cdecl ObjectRenderer::DisplayGizmos(void)" (?DisplayGizmos@ObjectRenderer@@QEAAXXZ) already defined in Loader.obj
+UserInterface.obj : error LNK2005: "protected: void __cdecl ObjectRenderer::DisplayList(void)" (?DisplayList@ObjectRenderer@@IEAAXXZ) already defined in Loader.obj
+UserInterface.obj : error LNK2005: "protected: void __cdecl ObjectRenderer::DisplayVBO(void)" (?DisplayVBO@ObjectRenderer@@IEAAXXZ) already defined in Loader.obj
+UserInterface.obj : error LNK2005: "protected: void __cdecl ObjectRenderer::DisplayVP(void)" (?DisplayVP@ObjectRenderer@@IEAAXXZ) already defined in Loader.obj
+LINK : fatal error LNK1104: cannot open file 'AntTweakBar64.lib'

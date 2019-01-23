@@ -1,0 +1,5 @@
+﻿  Main.cpp
+  UserInterface.cpp
+  Generating Code...
+c:\users\fliamejias\desktop\adrian-icg-2-adelantadao\src\sceneelement.h(131): warning C4715: 'Material::GetMaterial': not all control paths return a value
+  Despliegue3DPlantilla.vcxproj -> C:\Users\FliaMejias\Desktop\Adrian-ICG-2-adelantadao\Debug\Despliegue3DPlantilla.exe
