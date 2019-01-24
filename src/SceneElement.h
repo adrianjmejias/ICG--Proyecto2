@@ -1,4 +1,7 @@
 #pragma once
+//#include "../headers/GL/glew.h"
+//#define GLFW_INCLUDE_GLU
+
 #include "../headers/glfw3.h"
 #include "../headers/glm/glm.hpp"
 #include "../headers/glm/gtx/quaternion.hpp"
@@ -166,11 +169,11 @@ public:
 	float normalScale = 0.1f;
 
 	Color colorVertex{ 0,1,1 , 1 };
-	Color colorEdges{ 0,0,1 ,1};
-	Color colorFill{ 1,0.3f,0 ,1};
-	Color colorNormalsVertex{ 1,1,0 ,1 };
-	Color colorNormalsFace{ 0.2f,0.9f,0.4f, 1};
-	Color colorBB{ 0,0.9f,0, 1};
+	Color colorEdges{ 0,0,1 , 1 };
+	Color colorFill{ 1, 1, 1 , 1 };
+	Color colorNormalsVertex{ 1,1,0 , 1 };
+	Color colorNormalsFace{ 0.2f,0.9f,0.4f, 1 };
+	Color colorBB{ 0,0.9f,0, 1 };
 
 	Material material;
 
@@ -255,9 +258,9 @@ public:
 	for (auto triangleIndexes : trianglesRelated) {
 		vec3 norm;
 		for (auto tIndex : triangleIndexes) {
-			norm =norm+ mTrianglesNormals[tIndex]/(float)triangleIndexes.size();
+			norm +=mTrianglesNormals[tIndex];
 		}
-		//norm /= ;
+		norm /= (float)triangleIndexes.size();
 		mVerticesNormal.push_back(glm::normalize(norm));
 	}
 }
@@ -338,7 +341,6 @@ public:
 	{
 		isZCulled ? glEnable(GL_DEPTH_TEST) : glDisable(GL_DEPTH_TEST);
 		isBackFaceCulled ? glEnable(GL_CULL_FACE) : glDisable(GL_CULL_FACE);
-		//isFlatOrGouraud ? glShadeModel(GL_FLAT) : glShadeModel(GL_SMOOTH);
 		material.ApplyMaterial();
 
 		switch (displayType)
@@ -436,6 +438,9 @@ protected:
 	//	glBindBuffer(GL_ARRAY_BUFFER, 0);
 	//	glBindBuffer(GL_ELEMENT_ARRAY_BUFFER, 0);
 	//}
+
+		//glGenBuffers(1, &displayID);
+
 	//void model::displayVBO() {
 	//	glBindBuffer(GL_ARRAY_BUFFER, vbo);
 	//	glBindBuffer(GL_ELEMENT_ARRAY_BUFFER, vindex);
@@ -483,35 +488,90 @@ protected:
 
 	if (dirty)
 	{
-		glEnableClientState(GL_VERTEX_ARRAY);
 		{
-			isAffectedByLight ? glEnable(GL_LIGHTING) : glDisable(GL_LIGHTING);
 
 			if (showFill)
 			{
+				isAffectedByLight ? glEnable(GL_LIGHTING) : glDisable(GL_LIGHTING);
 				glColorFunc(ColorToFloatArr(colorFill));
 				glPolygonMode(GL_FRONT_AND_BACK, GL_FILL);
-				glVertexPointer(3, GL_FLOAT, 0, mVertices.data());
-				glDrawElements(GL_POLYGON, mTriangles.size(), GL_UNSIGNED_SHORT, mTriangles.data());
+
+				if (isFlatOrGouraud) {
+					glShadeModel(GL_FLAT);
+					
+					glEnableClientState(GL_NORMAL_ARRAY);
+					{
+						glNormalPointer(GL_FLOAT, 0, mTrianglesNormals.data());
+						glVertexPointer(3, GL_FLOAT, 0, mTrianglesCentroid.data());
+
+					}
+					glDisableClientState(GL_NORMAL_ARRAY);	
+
+
+					glEnableClientState(GL_VERTEX_ARRAY);
+					{
+						glVertexPointer(3,GL_FLOAT, 0, mVertices.data());
+						glDrawElements(GL_TRIANGLES, mTriangles.size() *3, GL_UNSIGNED_SHORT, mTriangles.data());
+					}
+					glDisableClientState(GL_VERTEX_ARRAY);
+		   			 		  
+				}
+				else 
+				{
+					glShadeModel(GL_SMOOTH);
+
+					glEnableClientState(GL_VERTEX_ARRAY);
+					glEnableClientState(GL_NORMAL_ARRAY);
+					{
+						glNormalPointer(GL_FLOAT, 0, mVerticesNormal.data());
+						glVertexPointer(3, GL_FLOAT, 0, mVertices.data());
+
+						glDrawElements(GL_TRIANGLES, mTriangles.size() * 3, GL_UNSIGNED_SHORT, mTriangles.data());
+					}
+					glDisableClientState(GL_NORMAL_ARRAY);
+					glDisableClientState(GL_VERTEX_ARRAY);
+				}
+				//glDrawArrays(GL_TRIANGLES, 0,mVertices.size());
+				glDisable(GL_LIGHTING);
 			}
+
+
+
 			glDisable(GL_LIGHTING);
+			glPolygonOffset(2, 2);
+
 			if (showVertex) {
+			glEnableClientState(GL_VERTEX_ARRAY);
+			{
 				glColorFunc(ColorToFloatArr(colorVertex));
+
 				glVertexPointer(3, GL_FLOAT, 0, mVertices.data());
-				glDrawElements(GL_POINTS, mTriangles.size(), GL_UNSIGNED_SHORT, mTriangles.data());
+
+				glDrawElements(GL_POINTS, mVertices.size()*3, GL_UNSIGNED_SHORT, mTriangles.data());
 			}
+			glDisableClientState(GL_VERTEX_ARRAY);
+			}
+
 
 			if (showMesh)
 			{
+				glEnableClientState(GL_VERTEX_ARRAY); 
+				{
+				glColorFunc(ColorToFloatArr(colorEdges));
+
 				glPolygonMode(GL_FRONT_AND_BACK, GL_LINE);
 
-				glColorFunc(ColorToFloatArr(colorEdges));
 				glVertexPointer(3, GL_FLOAT, 0, mVertices.data());
-				glDrawElements(GL_TRIANGLES, mTriangles.size(), GL_UNSIGNED_SHORT, mTriangles.data());
+
+				glDrawElements(GL_TRIANGLES, mTriangles.size()*3, GL_UNSIGNED_SHORT, mTriangles.data());
+				}
 			}
 
+			glPolygonOffset(0, 0);
+
+			glDisableClientState(GL_VERTEX_ARRAY);
+
 		}
-		glDisableClientState(GL_VERTEX_ARRAY);
 	}
 
 }

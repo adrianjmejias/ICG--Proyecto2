@@ -39,8 +39,8 @@ public:
 	}
 	void ApplyLight() {
 		glEnable(GL_LIGHTING);
-	
 		isOn ? glEnable(lightID) : glDisable(lightID);
+		renderer->showFill = isOn;
 		
 		glLightfv(lightID, GL_POSITION, glm::value_ptr(position));
 		glLightfv(lightID, GL_AMBIENT, glm::value_ptr(ambient));

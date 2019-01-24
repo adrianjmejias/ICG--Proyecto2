@@ -271,8 +271,8 @@ int main(void)
 
 	glEnable(GL_DEPTH_TEST);
 	glEnable(GL_BLEND);
-	glEnable(GL_LINE_SMOOTH);
-	glEnable(GL_POLYGON_SMOOTH);
+	//glEnable(GL_LINE_SMOOTH);
+	//glEnable(GL_POLYGON_SMOOTH);
 	glBlendFunc(GL_SRC_ALPHA, GL_ONE_MINUS_SRC_ALPHA);
 	glHint(GL_PERSPECTIVE_CORRECTION_HINT, GL_NICEST);
 	glHint(GL_POLYGON_SMOOTH_HINT, GL_NICEST);
@@ -283,7 +283,7 @@ int main(void)
 	//glOrtho(10.0f, gWidth, gHeight, 0.0f, 0.0f, 1.0f);
 	gluLookAt(3.0f, 3.0f, 10.0f, 0.0f, 0.0f, 0.0f, 0.0f, 1.0f, 0.0f);
 	glEnable(GL_LIGHTING);
-	glLightModelfv(GL_LIGHT_MODEL_LOCAL_VIEWER,glm::value_ptr(glm::vec3(1,1,1)));
+	//glLightModelfv(GL_LIGHT_MODEL_LOCAL_VIEWER,glm::value_ptr(glm::vec3(1,1,1)));
 
 	AddLight("../files/Lightbulb.obj");
 	AddLight("../files/Lightbulb.obj");

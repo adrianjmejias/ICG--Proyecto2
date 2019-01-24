@@ -1,22 +1,29 @@
-﻿Main.obj : error LNK2005: "public: void __cdecl ObjectRenderer::CalculateNormals(void)" (?CalculateNormals@ObjectRenderer@@QEAAXXZ) already defined in Loader.obj
-Main.obj : error LNK2005: "public: void __cdecl ObjectRenderer::Display(void)" (?Display@ObjectRenderer@@QEAAXXZ) already defined in Loader.obj
-Main.obj : error LNK2005: "protected: void __cdecl ObjectRenderer::DisplayGL(void)" (?DisplayGL@ObjectRenderer@@IEAAXXZ) already defined in Loader.obj
-Main.obj : error LNK2005: "public: void __cdecl ObjectRenderer::DisplayGizmos(void)" (?DisplayGizmos@ObjectRenderer@@QEAAXXZ) already defined in Loader.obj
-Main.obj : error LNK2005: "protected: void __cdecl ObjectRenderer::DisplayList(void)" (?DisplayList@ObjectRenderer@@IEAAXXZ) already defined in Loader.obj
-Main.obj : error LNK2005: "protected: void __cdecl ObjectRenderer::DisplayVBO(void)" (?DisplayVBO@ObjectRenderer@@IEAAXXZ) already defined in Loader.obj
-Main.obj : error LNK2005: "protected: void __cdecl ObjectRenderer::DisplayVP(void)" (?DisplayVP@ObjectRenderer@@IEAAXXZ) already defined in Loader.obj
-Model.obj : error LNK2005: "public: void __cdecl ObjectRenderer::CalculateNormals(void)" (?CalculateNormals@ObjectRenderer@@QEAAXXZ) already defined in Loader.obj
-Model.obj : error LNK2005: "public: void __cdecl ObjectRenderer::Display(void)" (?Display@ObjectRenderer@@QEAAXXZ) already defined in Loader.obj
-Model.obj : error LNK2005: "protected: void __cdecl ObjectRenderer::DisplayGL(void)" (?DisplayGL@ObjectRenderer@@IEAAXXZ) already defined in Loader.obj
-Model.obj : error LNK2005: "public: void __cdecl ObjectRenderer::DisplayGizmos(void)" (?DisplayGizmos@ObjectRenderer@@QEAAXXZ) already defined in Loader.obj
-Model.obj : error LNK2005: "protected: void __cdecl ObjectRenderer::DisplayList(void)" (?DisplayList@ObjectRenderer@@IEAAXXZ) already defined in Loader.obj
-Model.obj : error LNK2005: "protected: void __cdecl ObjectRenderer::DisplayVBO(void)" (?DisplayVBO@ObjectRenderer@@IEAAXXZ) already defined in Loader.obj
-Model.obj : error LNK2005: "protected: void __cdecl ObjectRenderer::DisplayVP(void)" (?DisplayVP@ObjectRenderer@@IEAAXXZ) already defined in Loader.obj
-UserInterface.obj : error LNK2005: "public: void __cdecl ObjectRenderer::CalculateNormals(void)" (?CalculateNormals@ObjectRenderer@@QEAAXXZ) already defined in Loader.obj
-UserInterface.obj : error LNK2005: "public: void __cdecl ObjectRenderer::Display(void)" (?Display@ObjectRenderer@@QEAAXXZ) already defined in Loader.obj
-UserInterface.obj : error LNK2005: "protected: void __cdecl ObjectRenderer::DisplayGL(void)" (?DisplayGL@ObjectRenderer@@IEAAXXZ) already defined in Loader.obj
-UserInterface.obj : error LNK2005: "public: void __cdecl ObjectRenderer::DisplayGizmos(void)" (?DisplayGizmos@ObjectRenderer@@QEAAXXZ) already defined in Loader.obj
-UserInterface.obj : error LNK2005: "protected: void __cdecl ObjectRenderer::DisplayList(void)" (?DisplayList@ObjectRenderer@@IEAAXXZ) already defined in Loader.obj
-UserInterface.obj : error LNK2005: "protected: void __cdecl ObjectRenderer::DisplayVBO(void)" (?DisplayVBO@ObjectRenderer@@IEAAXXZ) already defined in Loader.obj
-UserInterface.obj : error LNK2005: "protected: void __cdecl ObjectRenderer::DisplayVP(void)" (?DisplayVP@ObjectRenderer@@IEAAXXZ) already defined in Loader.obj
+﻿  Loader.cpp
+c:\users\fliamejias\desktop\icg--proyecto2\src\sceneelement.h(234): warning C4267: 'initializing': conversion from 'size_t' to 'int', possible loss of data
+c:\users\fliamejias\desktop\icg--proyecto2\src\sceneelement.h(495): warning C4267: 'argument': conversion from 'size_t' to 'GLsizei', possible loss of data
+c:\users\fliamejias\desktop\icg--proyecto2\src\sceneelement.h(501): warning C4267: 'argument': conversion from 'size_t' to 'GLsizei', possible loss of data
+c:\users\fliamejias\desktop\icg--proyecto2\src\sceneelement.h(510): warning C4267: 'argument': conversion from 'size_t' to 'GLsizei', possible loss of data
+c:\users\fliamejias\desktop\icg--proyecto2\src\loader.cpp(26): warning C4267: 'initializing': conversion from 'size_t' to 'int', possible loss of data
+c:\users\fliamejias\desktop\icg--proyecto2\src\loader.cpp(141): warning C4267: 'initializing': conversion from 'size_t' to 'int', possible loss of data
+c:\users\fliamejias\desktop\icg--proyecto2\src\loader.cpp(150): warning C4267: 'initializing': conversion from 'size_t' to 'int', possible loss of data
+c:\users\fliamejias\desktop\icg--proyecto2\src\loader.cpp(159): warning C4267: 'initializing': conversion from 'size_t' to 'int', possible loss of data
+c:\users\fliamejias\desktop\icg--proyecto2\src\loader.cpp(165): warning C4267: 'initializing': conversion from 'size_t' to 'int', possible loss of data
+  Main.cpp
+c:\users\fliamejias\desktop\icg--proyecto2\src\sceneelement.h(234): warning C4267: 'initializing': conversion from 'size_t' to 'int', possible loss of data
+c:\users\fliamejias\desktop\icg--proyecto2\src\sceneelement.h(495): warning C4267: 'argument': conversion from 'size_t' to 'GLsizei', possible loss of data
+c:\users\fliamejias\desktop\icg--proyecto2\src\sceneelement.h(501): warning C4267: 'argument': conversion from 'size_t' to 'GLsizei', possible loss of data
+c:\users\fliamejias\desktop\icg--proyecto2\src\sceneelement.h(510): warning C4267: 'argument': conversion from 'size_t' to 'GLsizei', possible loss of data
+c:\users\fliamejias\desktop\icg--proyecto2\src\main.cpp(65): warning C4267: 'argument': conversion from 'size_t' to 'int', possible loss of data
+  Model.cpp
+c:\users\fliamejias\desktop\icg--proyecto2\src\sceneelement.h(234): warning C4267: 'initializing': conversion from 'size_t' to 'int', possible loss of data
+c:\users\fliamejias\desktop\icg--proyecto2\src\sceneelement.h(495): warning C4267: 'argument': conversion from 'size_t' to 'GLsizei', possible loss of data
+c:\users\fliamejias\desktop\icg--proyecto2\src\sceneelement.h(501): warning C4267: 'argument': conversion from 'size_t' to 'GLsizei', possible loss of data
+c:\users\fliamejias\desktop\icg--proyecto2\src\sceneelement.h(510): warning C4267: 'argument': conversion from 'size_t' to 'GLsizei', possible loss of data
+  UserInterface.cpp
+c:\users\fliamejias\desktop\icg--proyecto2\src\sceneelement.h(234): warning C4267: 'initializing': conversion from 'size_t' to 'int', possible loss of data
+c:\users\fliamejias\desktop\icg--proyecto2\src\sceneelement.h(495): warning C4267: 'argument': conversion from 'size_t' to 'GLsizei', possible loss of data
+c:\users\fliamejias\desktop\icg--proyecto2\src\sceneelement.h(501): warning C4267: 'argument': conversion from 'size_t' to 'GLsizei', possible loss of data
+c:\users\fliamejias\desktop\icg--proyecto2\src\sceneelement.h(510): warning C4267: 'argument': conversion from 'size_t' to 'GLsizei', possible loss of data
+  Generating Code...
+c:\users\fliamejias\desktop\icg--proyecto2\src\sceneelement.h(131): warning C4715: 'Material::GetMaterial': not all control paths return a value
 LINK : fatal error LNK1104: cannot open file 'AntTweakBar64.lib'
